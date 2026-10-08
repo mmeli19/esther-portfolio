@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 98%;
+    --foreground: 25 12% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 12% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 12% 10%;
+    --primary: 266 84% 58%;
+    --primary-foreground: 270 50% 99%;
+    --secondary: 270 40% 96%;
+    --secondary-foreground: 25 10% 18%;
+    --muted: 270 30% 96%;
+    --muted-foreground: 25 8% 44%;
+    --accent: 270 60% 94%;
+    --accent-foreground: 25 10% 18%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 266 84% 58%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 270 30% 6%;
+    --foreground: 270 20% 95%;
+    --card: 270 30% 9%;
+    --card-foreground: 270 20% 95%;
+    --popover: 270 30% 9%;
+    --popover-foreground: 270 20% 95%;
+    --primary: 266 84% 70%;
+    --primary-foreground: 270 30% 10%;
+    --secondary: 270 25% 14%;
+    --secondary-foreground: 270 20% 95%;
+    --muted: 270 25% 14%;
+    --muted-foreground: 270 15% 65%;
+    --accent: 270 25% 18%;
+    --accent-foreground: 270 20% 95%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 25% 18%;
+    --input: 270 25% 18%;
+    --ring: 266 84% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      #7639e8 0%,
+      #a373ff 50%,
+      #bd9bff 100%
+    );
+  }
+  .glass {
+    @apply backdrop-blur-md bg-white/60 border border-white/40;
+  }
+  .glass-dark {
+    @apply backdrop-blur-md bg-lavender-950/40 border border-lavender-300/10;
+  }
+  .grid-pattern {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(124, 58, 232, 0.08) 1px,
+      transparent 0
+    );
+    background-size: 32px 32px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f3edff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #bd9bff, #7639e8);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a373ff, #622fbf);
+}
+
+/* Selection */
+::selection {
+  background: #d6c2ff;
+  color: #321666;
+}
